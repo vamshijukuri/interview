@@ -18,7 +18,7 @@ public class Solution {
         
      scan.close();
         
-     System.out.println(a);---------------->imp
+     System.out.println(a);
      System.out.println(b);
      System.out.println(c);
     }
@@ -44,7 +44,7 @@ public class Solution {
               
             if(n%2==0){
 
-                if(n>=2 && n<=5){---------------------->imp
+                if(n>=2 && n<=5){
                 ans = "Not Weird";
             }
                 else if(n>=6 && n<=20){
@@ -69,7 +69,7 @@ public class Solution {
         Scanner scan = new Scanner(System.in);
         int i = scan.nextInt();
         double d = scan.nextDouble();
-        scan.nextLine();------------------------->imp
+        scan.nextLine();
         String s = scan.nextLine();
         
         scan.close();
@@ -90,7 +90,7 @@ public class Solution {
             for(int i=0;i<3;i++){
                 String s1=sc.next();
                 int x=sc.nextInt();
-                System.out.printf("%-15s%03d%n", s1, x);----->imp
+                System.out.printf("%-15s%03d%n", s1, x);
 
             }
             System.out.println("================================");
@@ -399,7 +399,7 @@ public class Solution {
     }
 }
 
-14)import java.util.*;
+15)import java.util.*;
 
 public class Solution {
 
