@@ -1,0 +1,985 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.16299}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs28\lang9 JDBC\par
+----------\par
+\fs22 1) How to connect Java application with Oracle and Mysql database using JDBC?\par
+2) What is the difference between Statement and PreparedStatement interface?\par
+3) How to print total numbers of tables and views of a database using JDBC ?\par
+4) How to store and retrieve images from Oracle database using JDBC?\par
+5) How to store and retrieve files from Oracle database using JDBC?\par
+JAVA COLLECTIONS\par
+----------------------------------------\par
+1) What are the two ways to iterate the elements of a collection ?\par
+2) What is the difference between ArrayList and LinkedList classes in collection framework?\par
+3) What is the difference between ArrayList and Vector classes in collection framework?\par
+4) What is the difference between HashSet and HashMap classes in collection framework?\par
+5) What is the difference between HashMap and Hashtable class?\par
+6) What is the difference between Iterator and Enumeration interface in collection framework?\par
+7) How can we sort the elements of an object. What is the difference between Comparable and Comparator interfaces?\par
+8) What does the hashcode() method ?\par
+9) What is the difference between java collection and java collections ?\par
+\fs28 JAVA STRINGS\fs24\par
+------------------------------\par
+\fs22 1) Why String objects are immutable?\par
+\b0 A) Because java uses the concept of string literal.Suppose there are 5 reference variables,all referes to one object "sachin".If one reference variable changes the value of the object, it will be affected to all the reference variables. That is why string objects are immutable in java.\b\par
+2) How to create an immutable class?\par
+3) What is string constant pool?\par
+4) What code is written by the compiler if you concat any string by + (string concatenation operator)?\par
+5) What is the difference between StringBuffer and StringBuilder class?\par
+\fs28\par
+Multithreading \fs22\par
+---------------------------\par
+1)  How to perform two tasks by two threads ?\par
+2)  How to perform multithreading by annonymous class ?\par
+3)  What is the Thread Schedular and what is the difference between preemptive scheduling and time slicing ?\par
+4)  What happens if we start a thread twice ?\par
+5)  What happens if we call the run() method instead of start() method ?\par
+6)  What is the purpose of join method ?\par
+7)  Why JVM terminates the daemon thread if there is no user threads remaining ?\par
+8)  What is the shutdown hook?\par
+9)  What is garbage collection ?\par
+10) What is the purpose of finalize() method ?\par
+11) What does gc() method ?\par
+12) What is synchronization and why use synchronization ?\par
+13) What is the difference between synchronized method and synchronized block ?\par
+14) What are the two ways to perform static synchronization ?\par
+15) What is deadlock and when it can occur ?\par
+16) What is interthread-communication or cooperation ?\par
+17) What we will learn in Multithreading\par
+\b0  \par
+\b\fs28 EXCEPTION\par
+-----------------------\par
+\f1\fs22 a) What is the difference between checked and unchecked exceptions ?\par
+b) What happens behind the code int data=50/0; ?\par
+c)Why use multiple catch block ?\par
+d) Is there any possibility when finally block is not executed ?\par
+e) What is exception propagation ?\par
+f) What is the difference between throw and throws keyword ?\par
+g) What are the 4 rules for using exception handling with method overriding ?\par
+\b0\f0\fs28\par
+\b OOP Questions\par
+----------------------\par
+\fs22 1)Can we overload main method ?\par
+--------------------------------------------\par
+\b0 A) yes, we can overload main method. main method must not be static main method. Yes, main method can be overloaded.\par
+   Overloaded main method has to be called from inside the "public static void main(String args[])" as this is the \par
+   entry point when the class is launched by the JVM. \par
+   \par
+   We can not override the static method because static metod is a class method and the scope of this method within \par
+   the same class itself. ... Hence, it does not makes sense to "override" it (or for that matter any static method).\par
+   The concept of "overriding" is only for instance methods.\par
+\par
+For example: \par
+public class Test \{\par
+  public static void main(String[] args) \{\par
+        System.out.println("main(String[] args)");\par
+    \}\par
+\par
+    public static void main(String arg1) \{\par
+        System.out.println("main(String arg1)");\par
+    \}\par
+\par
+    public static void main(String arg1, String arg2) \{\par
+        System.out.println("main(String arg1, String arg2)");\par
+    \}\par
+\}\par
+\par
+\b 2)Constructor returns a value but, what ?\par
+---------------------------------------------------------\par
+\b0 A) So when you call the constructor using a new keyword you get an object. Though it doesnt explicitly return something but\par
+  instead it creates or constructs something which you can use as an instance of a class. yes, it is the current class \par
+  instance. (We cannot use return type yet it returns a value)\par
+   \par
+  public class Foo \{\par
+    public Foo() \{\}\par
+ \}\par
+  Here, there's no explicit return value.\par
+\tab Foo foo = new Foo();\par
+This creates a new object by allocating memory and calling the constructor. Here, the result is clearly an instance of Foo.\par
+One way to reconcile the apparently conflicting notation is by thinking of a constructor as returning the object being \par
+constructed, but doing so implicitly\par
+\par
+\b 3)Can we create a program without main method ?\par
+--------------------------------------------------------------------\par
+\b0 According to my knowledge we cannot execute without a main method because when you are running the java program. java \par
+Virtual machine look for the main method .if JVM could not find the main method it will show you run time error Exception\par
+in thread main could not find the main class.\par
+But yes, it can be done through static blogs if there is a static block in a java program,the class loader loads all\par
+static block before java gives call to main() method!.\par
+\par
+i)jvm loads class\par
+ii)executes static blocks\par
+iii)looks for main method and invokes it\par
+   So, if there's code in a static block, it will be executed. But there's no point in doing that.How to test that:\par
+\par
+  public final class Test \{\par
+    static \{\par
+        System.out.println("FOO");\par
+    \}\par
+\}\par
+o/p: FOO\par
+java.lang.NoSuchMethodError: main\par
+\par
+\par
+\b 4)What are the 6 ways to use this keyword ?\par
+------------------------------------------------------------\par
+\b0 1.this can be used to refer current class instance variable.\par
+2.this can be used to invoke current class method (implicitly)\par
+3.this() can be used to invoke current class constructor.\par
+4.this can be passed as an argument in the method call.\par
+5.this can be passed as argument in the constructor call.\par
+6.this can be used to return the current class instance from the method.\par
+\par
+\b\par
+5)Why multiple inheritance is not supported in java ?\par
+-----------------------------------------------------------------------\par
+\b0 In multiple inheritance as Class D extends both classes B & C. Now lets assume we have a method in class A and class B & C\par
+overrides that method in their own way.Wait!! here the problem comes \f1\endash  Because D is extending both B & C so if D wants to\par
+use the same method which method would be called (the overridden method of B or the overridden method of C). Ambiguity. \par
+That\rquote s the main reason why Java doesn\rquote t support multiple inheritance\par
+\par
+\b\f0\lang1033 6\f1\lang9 )Why use aggregation ?\par
+-----------------------------------------------------------------\par
+\b0 Aggregation is a special form of association. It is a relationship between two classes like association, however\par
+its a directional association, which means it is strictly a one way association. It represents a HAS-A relationship.\par
+\par
+For example consider two classes Student class and Address class. Every student has an address so the relationship between \par
+student and address is a Has-A relationship. But if you consider its vice versa then it would not make any sense as an \par
+Address doesn\rquote t need to have a Student necessarily. \par
+\par
+\b\f0\lang1033 7\f1\lang9 )Can we override the static method ?\par
+---------------------------------------------------------------------\par
+\b0 Static methods can not be overridden because they are not part of the object's state. Rather, they belongs to the \par
+class (i.e they are class methods). It is ok to overload static (and final) methods. No,Static methods can't be overriden \par
+as it is part of a class rather than an object.\par
+\par
+\b\f0\lang1033 8\f1\lang9 )What is covariant return type ?\par
+------------------------------------------------------------------------\par
+\b0 Covariant return, means that when one overrides a method, the return type of the overriding method is allowed to be a \par
+subtype of the overridden method's return type.\par
+\par
+To clarify this with an example, a common case is Object.clone() - which is declared to return a type of Object. \par
+You could override this in your own class as follows\par
+\par
+public class MyFoo\par
+\{\par
+\par
+   ...\par
+\par
+   // Note covariant return here, method does not just return Object\par
+   public MyFoo clone()\par
+   \{\par
+       // Implementation\par
+   \}\par
+\}\par
+The benefit here is that any method which holds an explicit reference to a MyFoo object will be able to invoke \par
+clone() and know (without casting) that the return value is an instance of MyFoo. Without covariant return types, \par
+the overridden method in MyFoo would have to be declared to return Object - and so calling code would have to explicitly \par
+downcast the result of the method call (even thought both sides "know" it can only ever be an instance of MyFoo).\par
+\par
+Note that there's nothing special about clone() and that any overridden method can have a covariant return - I used it as \par
+an example here as it's a standard method where this is often useful\par
+\par
+\par
+\b\f0\lang1033 9\f1\lang9 )What are the three usage of super keyword?\par
+--------------------------------------------------------------------\par
+\b0 It is used inside a sub-class method definition to call a method defined in the super class. Private methods of the super\par
+-class cannot be called. Only public and protected methods can be called by the super keyword.It is also used by class \par
+constructors to invoke constructors of its parent class.\par
+\par
+ public class SuperClass \{\par
+   public void printHello() \{\par
+      System.out.println("Hello from SuperClass");\par
+      return;\par
+   \}\par
+\}\par
+  public class SubClass extends SuperClass \{\par
+   public void printHello() \{\par
+      super.printHello();\par
+      System.out.println("Hello from SubClass");\par
+      return;\par
+   \}\par
+   public static main(String[] args) \{\par
+      SubClass obj = new SubClass();\par
+      obj.printHello();\par
+   \}\par
+\}\par
+\par
+\b\f0\lang1033 10\f1\lang9 )\f0\lang1033  \f1\lang9 Why use instance initializer block?\par
+--------------------------------------------------------------------------\par
+\b0 Instance Initializer block is used to initialize the instance data member. It run each time when object \par
+of the class is created.The initialization of the instance variable can be done directly but there can be performed extra \par
+operations while initializing the instance variable in the instance initializer block.\par
+\par
+class Bike7\{  \par
+    int speed;  \par
+      \par
+    Bike7()\{System.out.println("speed is "+speed);\}  \par
+   \par
+    \{speed=100;\}  \par
+       \par
+    public static void main(String args[])\{  \par
+    Bike7 b1=new Bike7();  \par
+    Bike7 b2=new Bike7();  \par
+    \}      \par
+\}  \par
+\par
+\par
+\b\par
+\f0\lang1033 11\f1\lang9 )What is the usage of blank final variable ?\par
+----------------------------------------------------------------------------------\par
+\b0 A final variable declared but not initialized (or not given a value) is known as blank final variable. It can be given a \par
+value through a constructor only (but not through a method call).\par
+\par
+\b\f0\lang1033 1\f1\lang9 2\f0\lang1033 )\f1\lang9  What is static blank final variable?\par
+---------------------------------------------------------\par
+\b0 It is simply a blank final variable declared extra as static. That is, a final static variable declared but not given a \par
+value or not initialized is known as static blank final variable.\par
+\par
+\b\f0\lang1033 1\f1\lang9 3\f0\lang1033 )\f1\lang9  How to give a value to a static blank final variable?\par
+---------------------------------------------------------------------\par
+\b0 It can be given value (or initialized) through a static block only.\par
+\par
+\par
+\b\par
+\f0\lang1033 14\f1\lang9 )What is marker or tagged interface ?\par
+---------------------------------------------------------------\par
+\b0 Marker interface in Java is an interface with no fields or methods. In simple words, empty interface in java is called \par
+marker interface. Example of marker interface is Serializable, Cloneable and Remote interface. These are used to indicate \par
+something to compiler or JVM.\par
+\par
+\b\f0\lang1033 15\f1\lang9 )What is runtime polymorphism or dynamic method dispatch ?\par
+------------------------------------------------------------------------------------------\par
+\b0 Dynamic method dispatch is a mechanism by which a call to an overridden method is resolved at runtime. This is how java \par
+implements runtime polymorphism. When an overridden method is called by a reference, java determines which version of \par
+that method to execute based on the type of object it refer to.\par
+\b\par
+\f0\lang1033 16\f1\lang9 )What is the difference between static and dynamic binding ?\par
+------------------------------------------------------------------------------------------------\par
+\b0 Static binding in Java occurs during compile time while dynamic binding occurs during runtime.\par
+private, final and static methods and variables use static binding and are bonded by compiler while virtual methods are \par
+bonded during runtime based upon runtime object.Static binding uses Type (class in Java) information for binding while \par
+dynamic binding uses object to resolve binding.Overloaded methods are bonded using static binding while overridden \par
+methods are bonded using dynamic binding at runtime.\par
+Static Binding Example in Java\par
+\par
+public class StaticBindingTest \{  \par
+    public static void main(String args[]) \{\par
+        Collection c = new HashSet();\par
+        StaticBindingTest et = new StaticBindingTest();\par
+        et.sort(c);\par
+    \}\par
+    //overloaded method takes Collection argument\par
+    public Collection sort(Collection c) \{\par
+        System.out.println("Inside Collection sort method");\par
+        return c;\par
+    \}\par
+    //another overloaded method which takes HashSet argument which is sub class\par
+    public Collection sort(HashSet hs) \{\par
+        System.out.println("Inside HashSet sort method");\par
+        return hs;\par
+    \}\par
+\}\par
+Example of Dynamic Binding in Java\par
+\par
+public class DynamicBindingTest \{   \par
+    public static void main(String args[]) \{\par
+        Vehicle vehicle = new Car(); //here Type is vehicle but object will be Car\par
+        vehicle.start(); //Car's start called because start() is overridden method\par
+    \}\par
+\}\par
+\par
+class Vehicle \{\par
+    public void start() \{\par
+        System.out.println("Inside start method of Vehicle");\par
+    \}\par
+\}\par
+\par
+class Car extends Vehicle \{\par
+    @Override\par
+    public void start() \{\par
+        System.out.println("Inside start method of Car");\par
+    \}\par
+\}\par
+\b\f0\lang1033 17\f1\lang9 )How downcasting is possible in java ?\par
+------------------------------------------------------------------------------------------\par
+\b0 Upcasting is assigning the sub class reference object to the parent class which is allowed in Java. Downcasting is \par
+assigning parent class reference object to the sub class which is not allowed in Java. However, if you do downcasting, \par
+there will not be any compiler error. But, there will be runtime exception java.lang.ClassCastException. Then why \par
+downcasting is permitted without any compiler error?. Downcasting is legal in some scenarios where the actual object \par
+referred by the parent class is of sub class.\par
+\par
+\b\f0\lang1033 18\f1\lang9 )What is the purpose of private constructor?\par
+--------------------------------------------------------------------------------\par
+\b0 1)The constructor can only be accessed from static factory method inside the class itself. Singleton can also belong to \par
+  this category.\par
+2)A utility class, that only contains static methods.\par
+\par
+\b\f0\lang1033 19\f1\lang9 )What is object cloning ? \par
+-------------------------------------------------------------------------------\par
+\b0 clone() is a method in the Java programming language for object duplication. In java, objects are manipulated through \par
+reference variables, and there is no operator for copying an object\emdash the assignment operator duplicates the reference, \par
+not the object. The clone() method provides this missing functionality.\par
+\par
+Object copy = obj.clone();\par
+\par
+MyClass copy = (MyClass) obj.clone();\par
+\par
+\b\fs28 Java I/o\par
+--------\par
+\fs22 1) How to write a common data to multiple files using single stream only ?\par
+2) How can we access multiple files by single stream ?\par
+3) How can we improve the performance of Input and Output operation ?\par
+4) How many ways can we read data from the keyboard?\par
+5) What is console class ?\par
+6) How to compress and uncompress the data of a file?\par
+\b0\par
+\b\fs28 Java Array Programs:\par
+----------------------\f0\lang1033 ----\f1\lang9\par
+\fs22 11) Find 3rd Largest Number in an Array\b0\par
+\f0\lang1033 A) \f1\lang9 Write a java program to find 3rd largest number in an array.\par
+Input: 1,2,5,6,3,2\par
+Output: 3\par
+\par
+public class ThirdLargestInArrayExample\{  \par
+public static int getThirdLargest(int[] a, int total)\{  \par
+int temp;  \par
+for (int i = 0; i < total; i++)   \par
+        \{  \par
+            for (int j = i + 1; j < total; j++)   \par
+            \{  \par
+                if (a[i] > a[j])   \par
+                \{  \par
+                    temp = a[i];  \par
+                    a[i] = a[j];  \par
+                    a[j] = temp;  \par
+                \}  \par
+            \}  \par
+        \}  \par
+       return a[total-3];  \par
+\}  \par
+public static void main(String args[])\{  \par
+int a[]=\{1,2,5,6,3,2\};  \par
+int b[]=\{44,66,99,77,33,22,55\};  \par
+System.out.println("Third Largest: "+getThirdLargest(a,6));  \par
+System.out.println("Third Largest: "+getThirdLargest(b,7));  \par
+\}\}\par
+\par
+\b 12) Find 2nd Largest Number in an Array\b0\par
+\f0\lang1033 A) \f1\lang9 Write a java program to find 2nd largest number in an array.\par
+Input: 1,2,5,6,3,2\par
+Output: 5\par
+\par
+public class SecondLargestInArrayExample\{  \par
+public static int getSecondLargest(int[] a, int total)\{  \par
+int temp;  \par
+for (int i = 0; i < total; i++)   \par
+        \{  \par
+            for (int j = i + 1; j < total; j++)   \par
+            \{  \par
+                if (a[i] > a[j])   \par
+                \{  \par
+                    temp = a[i];  \par
+                    a[i] = a[j];  \par
+                    a[j] = temp;  \par
+                \}  \par
+            \}  \par
+        \}  \par
+       return a[total-2];  \par
+\}  \par
+public static void main(String args[])\{  \par
+int a[]=\{1,2,5,6,3,2\};  \par
+int b[]=\{44,66,99,77,33,22,55\};  \par
+System.out.println("Second Largest: "+getSecondLargest(a,6));  \par
+System.out.println("Second Largest: "+getSecondLargest(b,7));  \par
+\}\}\par
+\par
+\b 13) Find Largest Number in an Array\b0\par
+\f0\lang1033 A)\f1\lang9 Write a java program to find largest number in an array.\par
+Input: 1,2,5,6,3,2\par
+Output: 6\par
+\par
+public class LargestInArrayExample\{  \par
+public static int getLargest(int[] a, int total)\{  \par
+int temp;  \par
+for (int i = 0; i < total; i++)   \par
+        \{  \par
+            for (int j = i + 1; j < total; j++)   \par
+            \{  \par
+                if (a[i] > a[j])   \par
+                \{  \par
+                    temp = a[i];  \par
+                    a[i] = a[j];  \par
+                    a[j] = temp;  \par
+                \}  \par
+            \}  \par
+        \}  \par
+       return a[total-1];  \par
+\}  \par
+public static void main(String args[])\{  \par
+int a[]=\{1,2,5,6,3,2\};  \par
+int b[]=\{44,66,99,77,33,22,55\};  \par
+System.out.println("Largest: "+getLargest(a,6));  \par
+System.out.println("Largest: "+getLargest(b,7));  \par
+\}\}\par
+\par
+\par
+\par
+\b 14) Find 2nd Smallest Number in an Array\b0\par
+\f0\lang1033 A)\f1\lang9 Write a java program to find 2nd smallest number in an array.\par
+Input: 1,2,5,6,3,2\par
+Output: 2\par
+\par
+public class SecondSmallestInArrayExample\{  \par
+public static int getSecondSmallest(int[] a, int total)\{  \par
+int temp;  \par
+for (int i = 0; i < total; i++)   \par
+        \{  \par
+            for (int j = i + 1; j < total; j++)   \par
+            \{  \par
+                if (a[i] > a[j])   \par
+                \{  \par
+                    temp = a[i];  \par
+                    a[i] = a[j];  \par
+                    a[j] = temp;  \par
+                \}  \par
+            \}  \par
+        \}  \par
+       return a[1];//2nd element because index starts from 0  \par
+\}  \par
+public static void main(String args[])\{  \par
+int a[]=\{1,2,5,6,3,2\};  \par
+int b[]=\{44,66,99,77,33,22,55\};  \par
+System.out.println("Second smallest: "+getSecondSmallest(a,6));  \par
+System.out.println("Second smallest: "+getSecondSmallest(b,7));  \par
+\}\}\par
+\par
+\par
+\b 15) Find Smallest Number in an Array\b0\par
+\f0\lang1033 A) \f1\lang9 Write a java program to find smallest number in an array.\par
+Input: 1,2,5,6,3,2\par
+Output: 1\par
+\par
+public class SmallestInArrayExample\{  \par
+public static int getSmallest(int[] a, int total)\{  \par
+int temp;  \par
+for (int i = 0; i < total; i++)   \par
+        \{  \par
+            for (int j = i + 1; j < total; j++)   \par
+            \{  \par
+                if (a[i] > a[j])   \par
+                \{  \par
+                    temp = a[i];  \par
+                    a[i] = a[j];  \par
+                    a[j] = temp;  \par
+                \}  \par
+            \}  \par
+        \}  \par
+       return a[0];  \par
+\}  \par
+public static void main(String args[])\{  \par
+int a[]=\{1,2,5,6,3,2\};  \par
+int b[]=\{44,66,99,77,33,22,55\};  \par
+System.out.println("Smallest: "+getSmallest(a,6));  \par
+System.out.println("Smallest: "+getSmallest(b,7));  \par
+\}\}\par
+\par
+\par
+\b 16) Remove Duplicate Element in an Array\b0\par
+\f0\lang1033 A) \f1\lang9 Write a java program to remove duplicate element in an array.\par
+Input: 10,20,20,30,30,40,50,50\par
+Output: 10 20 30 40 50\par
+\par
+public class RemoveDuplicateInArrayExample\{  \par
+public static int removeDuplicateElements(int arr[], int n)\{  \par
+        if (n==0 || n==1)\{  \par
+            return n;  \par
+        \}  \par
+        int[] temp = new int[n];  \par
+        int j = 0;  \par
+        for (int i=0; i<n-1; i++)\{  \par
+            if (arr[i] != arr[i+1])\{  \par
+                temp[j++] = arr[i];  \par
+            \}  \par
+         \}  \par
+        temp[j++] = arr[n-1];     \par
+        // Changing original array  \par
+        for (int i=0; i<j; i++)\{  \par
+            arr[i] = temp[i];  \par
+        \}  \par
+        return j;  \par
+    \}  \par
+       \par
+    public static void main (String[] args) \{  \par
+        int arr[] = \{10,20,20,30,30,40,50,50\};  \par
+        int length = arr.length;  \par
+        length = removeDuplicateElements(arr, length);  \par
+        //printing array elements  \par
+        for (int i=0; i<length; i++)  \par
+           System.out.print(arr[i]+" ");  \par
+    \}  \par
+\}\par
+\par
+\par
+\par
+\b 17) Add Two Matrices\b0\par
+\f0\lang1033 A) \f1\lang9 Write a java program to add two matrices.\par
+Input:\par
+First matrix elements:\par
+1 1 1\par
+2 2 2\par
+3 3 3\par
+Second matrix elements:\par
+1 1 1\par
+2 2 2\par
+3 3 3\par
+Output:\par
+Addition of the matrix:\par
+2 2 2\par
+4 4 4\par
+6 6 6\par
+\par
+public class MatrixAdditionExample\{  \par
+public static void main(String args[])\{  \par
+//creating two matrices    \par
+int a[][]=\{\{1,3,4\},\{2,4,3\},\{3,4,5\}\};    \par
+int b[][]=\{\{1,3,4\},\{2,4,3\},\{1,2,4\}\};    \par
+    \par
+//creating another matrix to store the sum of two matrices    \par
+int c[][]=new int[3][3];  //3 rows and 3 columns  \par
+    \par
+//adding and printing addition of 2 matrices    \par
+for(int i=0;i<3;i++)\{    \par
+for(int j=0;j<3;j++)\{    \par
+c[i][j]=a[i][j]+b[i][j];    //use - for subtraction  \par
+System.out.print(c[i][j]+" ");    \par
+\}    \par
+System.out.println();//new line    \par
+\}    \par
+\}\}  \par
+\par
+\par
+\b 18) Multiply Two Matrices\b0\par
+\f0\lang1033 A) \f1\lang9 Write a java program to multiply two matrices.\par
+Input:\par
+First matrix elements:\par
+1 1 1\par
+2 2 2\par
+3 3 3\par
+Second matrix elements:\par
+1 1 1\par
+2 2 2\par
+3 3 3\par
+Output:\par
+Multiplication of the matrix:\par
+6 6 6\par
+12 12 12\par
+18 18 18\par
+\par
+public class MatrixMultiplicationExample\{  \par
+public static void main(String args[])\{  \par
+//creating two matrices    \par
+int a[][]=\{\{1,1,1\},\{2,2,2\},\{3,3,3\}\};    \par
+int b[][]=\{\{1,1,1\},\{2,2,2\},\{3,3,3\}\};    \par
+    \par
+//creating another matrix to store the multiplication of two matrices    \par
+int c[][]=new int[3][3];  //3 rows and 3 columns  \par
+    \par
+//multiplying and printing multiplication of 2 matrices    \par
+for(int i=0;i<3;i++)\{    \par
+for(int j=0;j<3;j++)\{    \par
+c[i][j]=0;      \par
+for(int k=0;k<3;k++)      \par
+\{      \par
+c[i][j]+=a[i][k]*b[k][j];      \par
+\}//end of k loop  \par
+System.out.print(c[i][j]+" ");  //printing matrix element  \par
+\}//end of j loop  \par
+System.out.println();//new line    \par
+\}    \par
+\}\}\par
+\par
+\b 19) Print Odd and Even Number from an Array\b0\par
+\f0\lang1033 A) \f1\lang9 Write a java program to print odd and even number from an array.\par
+\par
+Input: 1,2,5,6,3,2\par
+Output:\par
+Odd Numbers:\par
+1\par
+5\par
+3\par
+Even Numbers:\par
+2\par
+6\par
+2\par
+\par
+public class OddEvenInArrayExample\{  \par
+public static void main(String args[])\{  \par
+int a[]=\{1,2,5,6,3,2\};  \par
+System.out.println("Odd Numbers:");  \par
+for(int i=0;i<a.length;i++)\{  \par
+if(a[i]%2!=0)\{  \par
+System.out.println(a[i]);  \par
+\}  \par
+\}  \par
+System.out.println("Even Numbers:");  \par
+for(int i=0;i<a.length;i++)\{  \par
+if(a[i]%2==0)\{  \par
+System.out.println(a[i]);  \par
+\}  \par
+\}  \par
+\}\} \par
+\par
+\par
+\b 20) Transpose matrix\b0\par
+\f0\lang1033 A) \f1\lang9 Write a java program to transpose a matrix.\par
+\par
+Output:\par
+Printing Matrix without transpose:\par
+1 3 4 \par
+2 4 3 \par
+3 4 5 \par
+Printing Matrix After Transpose:\par
+1 2 3 \par
+3 4 4 \par
+4 3 5 \par
+\par
+public class MatrixTransposeExample\{  \par
+public static void main(String args[])\{  \par
+//creating a matrix  \par
+int original[][]=\{\{1,3,4\},\{2,4,3\},\{3,4,5\}\};    \par
+    \par
+//creating another matrix to store transpose of a matrix  \par
+int transpose[][]=new int[3][3];  //3 rows and 3 columns  \par
+    \par
+//Code to transpose a matrix  \par
+for(int i=0;i<3;i++)\{    \par
+for(int j=0;j<3;j++)\{    \par
+transpose[i][j]=original[j][i];  \par
+\}    \par
+\}    \par
+  \par
+System.out.println("Printing Matrix without transpose:");  \par
+for(int i=0;i<3;i++)\{    \par
+for(int j=0;j<3;j++)\{    \par
+System.out.print(original[i][j]+" ");    \par
+\}    \par
+System.out.println();//new line    \par
+\}    \par
+System.out.println("Printing Matrix After Transpose:");  \par
+for(int i=0;i<3;i++)\{    \par
+for(int j=0;j<3;j++)\{    \par
+System.out.print(transpose[i][j]+" ");    \par
+\}    \par
+System.out.println();//new line    \par
+\}    \par
+\}\}\par
+\b\fs28 Basic DataStructures\par
+--------------------------------------\par
+\fs22 Java Programs:\par
+---------------\par
+\b0 Java programs are frequently asked in the interview. These programs can be asked from control statements, array, \par
+string, oops etc. Let's see the list of java programs.\par
+\b\par
+1) Fibonacci series:\par
+---------------------\par
+\b0 Write a java program to print fibonacci series without using recursion and using recursion.\par
+Input: 10\par
+Output: 0 1 1 2 3 5 8 13 21 34\par
+\par
+class FibonacciExample1\{  \par
+public static void main(String args[])  \par
+\{    \par
+ int n1=0,n2=1,n3,i,count=10;    \par
+ System.out.print(n1+" "+n2);//printing 0 and 1    \par
+    \par
+ for(i=2;i<count;++i)//loop starts from 2 because 0 and 1 are already printed    \par
+ \{    \par
+  n3=n1+n2;    \par
+  System.out.print(" "+n3);    \par
+  n1=n2;    \par
+  n2=n3;    \par
+ \}    \par
+  \par
+\}\}\par
+\par
+\b\par
+\par
+2) Prime number:\par
+----------------\f0\lang1033 ---------\f1\lang9\par
+\b0 Write a java program to check prime number.\par
+Input: 44\par
+Output: not prime number\par
+Input: 7\par
+Output: prime number\par
+\par
+public class PrimeExample\{    \par
+ public static void main(String args[])\{    \par
+  int i,m=0,flag=0;      \par
+  int n=3;//it is the number to be checked    \par
+  m=n/2;      \par
+  if(n==0||n==1)\{  \par
+   System.out.println(n+" is not prime number");      \par
+  \}else\{  \par
+   for(i=2;i<=m;i++)\{      \par
+    if(n%i==0)\{      \par
+     System.out.println(n+" is not prime number");      \par
+     flag=1;      \par
+     break;      \par
+    \}      \par
+   \}      \par
+   if(flag==0)  \{ System.out.println(n+" is prime number"); \}  \par
+  \}//end of else  \par
+\}    \par
+\}\par
+\par
+\b\par
+3) Palindrome number :\par
+---------------------\f0\lang1033 ------------\f1\lang9\par
+\b0 Write a java program to check palindrome number.\par
+Input: 329\par
+Output: not palindrome number\par
+Input: 12321\par
+Output: palindrome number\par
+\par
+class PalindromeExample\{  \par
+ public static void main(String args[])\{  \par
+  int r,sum=0,temp;    \par
+  int n=454;//It is the number variable to be checked for palindrome  \par
+  \par
+  temp=n;    \par
+  while(n>0)\{    \par
+   r=n%10;  //getting remainder  \par
+   sum=(sum*10)+r;    \par
+   n=n/10;    \par
+  \}    \par
+  if(temp==sum)    \par
+   System.out.println("palindrome number ");    \par
+  else    \par
+   System.out.println("not palindrome");    \par
+\}  \par
+\}\par
+\par
+\b 4) Factorial number:\par
+-----------------------\f0\lang1033 -----\f1\lang9\par
+\b0 Write a java program to print factorial of a number.\par
+Input: 5\par
+Output: 120\par
+Input: 6\par
+Output: 720\par
+\par
+class FactorialExample\{  \par
+ public static void main(String args[])\{  \par
+  int i,fact=1;  \par
+  int number=5;//It is the number to calculate factorial    \par
+  for(i=1;i<=number;i++)\{    \par
+      fact=fact*i;    \par
+  \}    \par
+  System.out.println("Factorial of "+number+" is: "+fact);    \par
+ \}  \par
+\} \par
+\par
+\b 5) Armstrong number:\par
+--------------------\f0\lang1033 ---------\f1\lang9\par
+\b0 Write a java program to check Armstrong number.\par
+Input: 153\par
+Output: Armstrong number\par
+Input: 22\par
+Output: not Armstrong number\par
+\par
+class ArmstrongExample\{  \par
+  public static void main(String[] args)  \{  \par
+    int c=0,a,temp;  \par
+    int n=153;//It is the number to check armstrong  \par
+    temp=n;  \par
+    while(n>0)  \par
+    \{  \par
+    a=n%10;  \par
+    n=n/10;  \par
+    c=c+(a*a*a);  \par
+    \}  \par
+    if(temp==c)  \par
+    System.out.println("armstrong number");   \par
+    else  \par
+        System.out.println("Not armstrong number");   \par
+   \}  \par
+\}\par
+\par
+\b\fs28\par
+Java Sorting Programs\par
+----------------------------------\par
+\fs22 6) Bubble Sort:\par
+-------------------\par
+\b0 Write a java program to sort an array elements using bubble sort algorithm.\par
+Input: 18 9 33 4 84 32\par
+Output: 4 9 18 32 33 84\par
+\par
+public class BubbleSortExample \{  \par
+    static void bubbleSort(int[] arr) \{  \par
+        int n = arr.length;  \par
+        int temp = 0;  \par
+         for(int i=0; i < n; i++)\{  \par
+                 for(int j=1; j < (n-i); j++)\{  \par
+                          if(arr[j-1] > arr[j])\{  \par
+                                 //swap elements  \par
+                                 temp = arr[j-1];  \par
+                                 arr[j-1] = arr[j];  \par
+                                 arr[j] = temp;  \par
+                         \}  \par
+                          \par
+                 \}  \par
+         \}  \par
+  \par
+    \}  \par
+    public static void main(String[] args) \{  \par
+                int arr[] =\{3,60,35,2,45,320,5\};  \par
+                 \par
+                System.out.println("Array Before Bubble Sort");  \par
+                for(int i=0; i < arr.length; i++)\{  \par
+                        System.out.print(arr[i] + " ");  \par
+                \}  \par
+                System.out.println();  \par
+                  \par
+                bubbleSort(arr);//sorting array elements using bubble sort  \par
+                 \par
+                System.out.println("Array After Bubble Sort");  \par
+                for(int i=0; i < arr.length; i++)\{  \par
+                        System.out.print(arr[i] + " ");  \par
+                \}  \par
+   \par
+        \}  \par
+\}\par
+\par
+\b 7) Selection Sort:\par
+-------------------\f0\lang1033 -----\f1\lang9\par
+\b0 Write a java program to sort an array elements using selection sort algorithm.\par
+Input: 18 9 33 4 84 32\par
+Output: 4 9 18 32 33 84\par
+\par
+public class SelectionSortExample \{  \par
+    public static void selectionSort(int[] arr)\{  \par
+        for (int i = 0; i < arr.length - 1; i++)  \par
+        \{  \par
+            int index = i;  \par
+            for (int j = i + 1; j < arr.length; j++)\{  \par
+                if (arr[j] < arr[index])\{  \par
+                    index = j;//searching for lowest index  \par
+                \}  \par
+            \}  \par
+            int smallerNumber = arr[index];   \par
+            arr[index] = arr[i];  \par
+            arr[i] = smallerNumber;  \par
+        \}  \par
+    \}  \par
+       \par
+    public static void main(String a[])\{  \par
+        int[] arr1 = \{9,14,3,2,43,11,58,22\};  \par
+        System.out.println("Before Selection Sort");  \par
+        for(int i:arr1)\{  \par
+            System.out.print(i+" ");  \par
+        \}  \par
+        System.out.println();  \par
+          \par
+        selectionSort(arr1);//sorting array using selection sort  \par
+         \par
+        System.out.println("After Selection Sort");  \par
+        for(int i:arr1)\{  \par
+            System.out.print(i+" ");  \par
+        \}  \par
+    \}  \par
+\} \par
+\par
+\par
+\b 8) Insertion Sort:\par
+-------------------\par
+\b0 Write a java program to sort an array elements using insertion sort algorithm.\par
+Input: 18 9 33 4 84 32\par
+Output: 4 9 18 32 33 84\par
+\par
+public class InsertionSortExample \{  \par
+    public static void insertionSort(int array[]) \{  \par
+        int n = array.length;  \par
+        for (int j = 1; j < n; j++) \{  \par
+            int key = array[j];  \par
+            int i = j-1;  \par
+            while ( (i > -1) && ( array [i] > key ) ) \{  \par
+                array [i+1] = array [i];  \par
+                i--;  \par
+            \}  \par
+            array[i+1] = key;  \par
+        \}  \par
+    \}  \par
+       \par
+    public static void main(String a[])\{    \par
+        int[] arr1 = \{9,14,3,2,43,11,58,22\};    \par
+        System.out.println("Before Insertion Sort");    \par
+        for(int i:arr1)\{    \par
+            System.out.print(i+" ");    \par
+        \}    \par
+        System.out.println();    \par
+            \par
+        insertionSort(arr1);//sorting array using insertion sort    \par
+           \par
+        System.out.println("After Insertion Sort");    \par
+        for(int i:arr1)\{    \par
+            System.out.print(i+" ");    \par
+        \}    \par
+    \}    \par
+\}\par
+\par
+\b\fs28 Java Searching Programs\par
+--------------------------------\par
+\fs22 9) Linear Search:\par
+-----------------\par
+\b0 Write a java program to perform linear search in java.\par
+\par
+public class LinearSearchExample\{    \par
+public static int linearSearch(int[] arr, int key)\{    \par
+        for(int i=0;i<arr.length;i++)\{    \par
+            if(arr[i] == key)\{    \par
+                return i;    \par
+            \}    \par
+        \}    \par
+        return -1;    \par
+    \}    \par
+    public static void main(String a[])\{    \par
+        int[] a1= \{10,20,30,50,70,90\};    \par
+        int key = 50;    \par
+        System.out.println(key+" is found at index: "+linearSearch(a1, key));    \par
+    \}    \par
+\}\par
+\par
+\par
+\b 10) Binary Search:\par
+------------------\f0\lang1033 ------\f1\lang9\par
+\b0 Write a java program to perform binary search in java.\par
+\par
+class BinarySearchExample\{  \par
+ public static void binarySearch(int arr[], int first, int last, int key)\{  \par
+   int mid = (first + last)/2;  \par
+   while( first <= last )\{  \par
+      if ( arr[mid] < key )\{  \par
+        first = mid + 1;     \par
+      \}else if ( arr[mid] == key )\{  \par
+        System.out.println("Element is found at index: " + mid);  \par
+        break;  \par
+      \}else\{  \par
+         last = mid - 1;  \par
+      \}  \par
+      mid = (first + last)/2;  \par
+   \}  \par
+   if ( first > last )\{  \par
+      System.out.println("Element is not found!");  \par
+   \}  \par
+ \}  \par
+ public static void main(String args[])\{  \par
+        int arr[] = \{10,20,30,40,50\};  \par
+        int key = 30;  \par
+        int last=arr.length-1;  \par
+        binarySearch(arr,0,last,key);     \par
+ \}  \par
+\} \par
+\par
+\par
+}
+ 
